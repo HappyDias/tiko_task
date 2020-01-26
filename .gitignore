@@ -1,5 +1,5 @@
 # Ignore sqlite database
-*.sqlite
+*.sqlite*
 
 # Ignore __pycache__
 *__pycache__*
