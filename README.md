@@ -46,4 +46,4 @@ I'll have notes here on how to get the project running
 
 ## Comments
 
-I'll leave comments on this section here
+1. Since the project states that two pages are to be supplied, I created an app with two views, each of wich returns a template, each template will, respectively, include the required functionality of each page (landing page and graph page).
