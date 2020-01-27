@@ -42,7 +42,21 @@ Useful links:
 
 ## Running the project
 
-I'll have notes here on how to get the project running
+### Running the dev server
+
+The user is required to have django and python installed (preferrably python 3 and django 3), please visit https://www.python.org/downloads/ and https://www.djangoproject.com/download/ to install these dependencies.
+
+Once the above dependencies are installed, you cam run the development server by opening a command prompt, navigating to the repository folder and running the following command
+
+```
+python manage.py runserver 
+```
+
+It is NOT recommended that this server be used in a production environment, this is only for checking how the application is working.
+
+### Deploying the application
+
+Django applications like these can be run in a variety of ways on a production environment, visit https://docs.djangoproject.com/en/3.0/howto/deployment/ for more information on deployment
 
 ## Comments
 
