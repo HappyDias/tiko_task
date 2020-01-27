@@ -9,4 +9,4 @@ package-lock.json
 node_modules
 
 #Ignore Sass'ed files
-*stylesheet.css*
+static/stylesheets*
