@@ -3,3 +3,7 @@
 
 # Ignore __pycache__
 *__pycache__*
+
+#Ignore node stuff
+package-lock.json
+node_modules
