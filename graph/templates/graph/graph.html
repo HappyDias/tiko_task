@@ -1,0 +1,18 @@
+{% extends 'graph/base.html' %}
+
+{% block title %}Graph{% endblock %}
+
+{% block imports %}
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+	{% load static %}
+	<script src="{% static 'functions.js' %}"></script>
+{% endblock %}
+
+{% block body %}
+	<canvas id="chart"></canvas>
+	<script>
+		const chart = draw_chart("chart");
+		const timer = setInterval(() => request_data(chart), 1000);
+	</script>
+{% endblock %}
+
