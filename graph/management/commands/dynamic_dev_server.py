@@ -39,7 +39,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         event_handler = FileChecker()
         observer = Observer()
-        observer.schedule(event_handler, path="static", recursive=False)
+        observer.schedule(event_handler, path="static", recursive=True)
         observer.start()
         call("python manage.py runserver", shell=True)
 
