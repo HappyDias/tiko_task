@@ -40,23 +40,47 @@ Useful links:
 
 * http://d3js.org/
 
-## Running the project
+## Running the Project
 
-### Running the dev server
+### Dependencies
 
 The user is required to have django and python installed (preferrably python 3 and django 3), please visit https://www.python.org/downloads/ and https://www.djangoproject.com/download/ to install these dependencies.
 
-Once the above dependencies are installed, you cam run the development server by opening a command prompt, navigating to the repository folder and running the following command
+### Run Migrations
+
+If you're running this application for the first time, you will not have the required database structure to handle user authentication. Django provides a tool to create said dataabse with the required structure. Navigate to the project's base folder and run the following command:
+
+```
+python manage.py migrate 
+```
+
+This should create the required database structure to hanle authentication
+
+### Create Users
+
+If you're running this application for the first time, you will not have any users to authenticate access to the app. You must first create a superuser to handle all top level administrative tasks. To create the superuser, start a shell and navigate to the projects base folder. Once there, run the following command:
+
+```
+python manage.py createsuperuser
+```
+
+And follow the prompts provided to create the superuser. This user can also be used as a regular user, though doing this is highly discouraged. With this superuser created, you can access the django admin site to create more users. With the dev server running (see [Run Development Server](#run-dev-server)), you can access the admin site via http://127.0.0.1:8000/admin and log in with your newly created superuser to access an interactive application that helps you perform administrator tasks, like creating new users.
+
+### Run Development Server
+
+Django comes with a development server that eases the process of development. To run this server, navigate to the project's base folder and run the following command:
 
 ```
 python manage.py runserver 
 ```
 
+You should be able to access the app on http://127.0.0.1:8000/
+
 It is NOT recommended that this server be used in a production environment, this is only for checking how the application is working.
 
-### Deploying the application
+### Deploying the Application
 
-Django applications like these can be run in a variety of ways on a production environment, visit https://docs.djangoproject.com/en/3.0/howto/deployment/ for more information on deployment
+Django projects can be run in a variety of ways on a production environment, visit https://docs.djangoproject.com/en/3.0/howto/deployment/ for more information on deploying a django project.
 
 ## Comments
 
@@ -64,3 +88,4 @@ Django applications like these can be run in a variety of ways on a production e
 
 2. Could not get app static files to work for some reason, all static files (JS, CSS, etc...) will be served from a global base folder called `static`, since this is a single app project it is not a big issue, in a real life larger project, I would have to fix the app static files.
 
+3. I redirect non-authenticated requests to the admin login page, otherwise I would have to create a new login page that would make all the request for authentication. In a real-world scenario this would be the way to go, but since this is not explicitely required, I am keeping it simple.
