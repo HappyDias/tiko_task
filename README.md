@@ -47,3 +47,6 @@ I'll have notes here on how to get the project running
 ## Comments
 
 1. Since the project states that two pages are to be supplied, I created an app with two views, each of wich returns a template, each template will, respectively, include the required functionality of each page (landing page and graph page).
+
+2. Could not get app static files to work for some reason, all static files (JS, CSS, etc...) will be served from a global base folder called `static`, since this is a single app project it is not a big issue, in a real life larger project, I would have to fix the app static files.
+
