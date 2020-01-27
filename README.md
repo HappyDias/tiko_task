@@ -46,6 +46,25 @@ Useful links:
 
 The user is required to have django and python installed (preferrably python 3 and django 3), please visit https://www.python.org/downloads/ and https://www.djangoproject.com/download/ to install these dependencies.
 
+The user is required to install these dependecies before running the project. Please go throw each of the bullet points that list the main dependencies and provide links for how to install them:
+
+1. [Python](https://www.python.org/downloads/)
+2. [Django](https://www.djangoproject.com/download/)
+3. [Nodejs](https://nodejs.org/en/download/)
+
+Apart from these main dependencies, the user is required to install specific dependencies for node and python:
+
+#### Node Dependencies
+
+This project uses nodejs third-party modules to handle javascript specific tasks, to install these third party modules, run a shell and navigate to the project base folder, once there run the following command
+
+```
+npm install
+```
+
+NOTE: This requires nodejs to be installed on your system!
+
+
 ### Run Migrations
 
 If you're running this application for the first time, you will not have the required database structure to handle user authentication. Django provides a tool to create said dataabse with the required structure. Navigate to the project's base folder and run the following command:
