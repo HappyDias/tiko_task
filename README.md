@@ -126,3 +126,9 @@ Django projects can be run in a variety of ways on a production environment, vis
 2. Could not get app static files to work for some reason, all static files (JS, CSS, etc...) will be served from a global base folder called `static`, since this is a single app project it is not a big issue, in a real life larger project, I would have to fix the app static files.
 
 3. I redirect non-authenticated requests to the admin login page, otherwise I would have to create a new login page that would make all the request for authentication. In a real-world scenario this would be the way to go, but since this is not explicitely required, I am keeping it simple.
+
+4. Since the task request requested ESLint to be used, there was no getting around puting node.js scripts in this project. I had hoped of doing this in pure python but unfortunately had to add the Node.js dependency
+
+5. Since Node is dealing with the JS linting, I went ahead and implemented sass as a Node script as well, this way we have Node running tasks that are aimed at the frontend files and python/django doing exclusively backend tasks.
+
+6. For the watch task I could have implemented something using gulp, or grunt task using Node and that would have gone with the phylosophy discussed in the previous point, however, it would have required more code. Thus I simply implemented a python watchdog class that checks for new files and changes in the static folder. Watchdog was triggering twice but this seems to be a long running issue in Windows so I implemented a time check that prevents changes younger than 1s to be registered.
