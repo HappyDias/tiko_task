@@ -3,3 +3,13 @@
 
 # Ignore __pycache__
 *__pycache__*
+
+#Ignore node stuff
+package-lock.json
+node_modules
+
+#Ignore Sass'ed files
+static/stylesheets*
+
+#Ignore pipenv lockfile
+Pipfile.lock

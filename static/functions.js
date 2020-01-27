@@ -1,25 +1,31 @@
+var Chart = window.Chart
+
 function draw_chart(arg){
 	var node = document.getElementById(arg);
-	var chart = new Chart(node, {
-		type: 'line',
-		data: {
-			datasets: [{
-				label: 'Length of joke',
-				data: []
-			}]
-		},
-		options: {
-			scales: {
-				xAxes: [{
-					type: 'time',
-					time: {
-			    		unit: 'second'
-					}
+	if(!(Chart === undefined)){
+
+		var chart = new Chart(node, {
+			type: 'line',
+			data: {
+				datasets: [{
+					label: 'Length of joke',
+					data: []
 				}]
+			},
+			options: {
+				scales: {
+					xAxes: [{
+						type: 'time',
+						time: {
+							unit: 'second'
+						}
+					}]
+				}
 			}
-		}
-	});
-	return chart
+		});
+		return chart
+	}
+	throw {message: "Chart library does not exist"}
 }
 
 function update_chart(chart, data){
@@ -28,7 +34,7 @@ function update_chart(chart, data){
 }
 
 function request_data(chart){
-	var req = fetch('http://api.icndb.com/jokes/random')
+	fetch('http://api.icndb.com/jokes/random')
 		.then( response => {
 			if(!response.ok){ throw response }
 			return response.json()
@@ -40,3 +46,4 @@ function request_data(chart){
 		})
 }
 
+export default {draw_chart, request_data}

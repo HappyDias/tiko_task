@@ -1,0 +1,26 @@
+{
+  "name": "tiko_task",
+  "version": "1.0.0",
+  "description": "Web task for Tiko Energy",
+  "main": "index.js",
+  "dependencies": {
+    "sass": "^1.25.1-test.1"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
+  },
+  "scripts": {
+    "lint": "npx eslint static",
+    "sass": "npx sass static/:static/stylesheets"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/HappyDias/tiko_task.git"
+  },
+  "author": "adias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/HappyDias/tiko_task/issues"
+  },
+  "homepage": "https://github.com/HappyDias/tiko_task#readme"
+}
