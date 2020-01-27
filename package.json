@@ -11,7 +11,7 @@
   },
   "scripts": {
     "lint": "npx eslint static",
-    "sass": "npx sass static"
+    "sass": "npx sass static/:static/stylesheets"
   },
   "repository": {
     "type": "git",

@@ -54,7 +54,7 @@ The user is required to install these dependecies before running the project. Pl
 
 Apart from these main dependencies, the user is required to install specific dependencies for node and python:
 
-#### Node Dependencies
+#### Node.js Dependencies
 
 This project uses nodejs third-party modules to handle javascript specific tasks, to install these third party modules, run a shell and navigate to the project base folder, once there run the following command
 
@@ -64,6 +64,22 @@ npm install
 
 NOTE: This requires nodejs to be installed on your system!
 
+#### Python Dependencies
+
+This project uses third-party python libraries, dependencies are managed by another third-party library called `pipenv`. If you don't have `pipenv` installed in your system, first run the following command (you can access [this site](https://github.com/pypa/pipenv) to get more information about installing pipenv):
+
+```
+pip install pipenv
+```
+
+Once `pipenv` is installed in your system, navigate to this project's base folder and run the following commands:
+
+```
+pipenv shell
+pipenv install
+```
+
+NOTE: This requires python to be installed on your system!
 
 ### Run Migrations
 
@@ -90,10 +106,12 @@ And follow the prompts provided to create the superuser. This user can also be u
 Django comes with a development server that eases the process of development. To run this server, navigate to the project's base folder and run the following command:
 
 ```
-python manage.py runserver 
+python manage.py dynamic_web_server
 ```
 
-You should be able to access the app on http://127.0.0.1:8000/
+This runs a special development server that watches for changes not only in your python files, but also on your static files (JS, CSS) and performs automated checking of said files for errors.
+
+After running the previous command, you should be able to access the app on http://127.0.0.1:8000/
 
 It is NOT recommended that this server be used in a production environment, this is only for checking how the application is working.
 
