@@ -10,3 +10,6 @@ node_modules
 
 #Ignore Sass'ed files
 static/stylesheets*
+
+#Ignore pipenv lockfile
+Pipfile.lock
