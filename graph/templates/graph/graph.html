@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Graph</title>
-</head>
-<body>
-	<div>
-		Graph
-	</div>
-</body>
+	<head>
+		<title>Graph</title>
+		{% load static %}
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.bundle.min.js"></script>
+		<script src="{% static 'functions.js' %}"></script>
+	</head>
+	<body>
+		<canvas id="chart"></canvas>
+		<script>
+			const chart = draw_chart("chart");
+			const timer = setInterval(() => request_data(chart), 1000);
+		</script>
+	</body>
 </html>
